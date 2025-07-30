@@ -39,10 +39,10 @@ const App = () => {
             height = isNaN(levels) ? 10 : levels * 3;
           }
         
-          if (height < 9) return [72, 68, 61, 255];     // cafe oscuro
-          if (height < 15) return [151, 144, 138, 255];      // beige
-          if (height < 80) return [215, 233, 225, 255];    // amarillento
-          return [206, 234, 255, 255];                       // celeste
+          if (height < 9) return [150, 138, 126, 255];     // cafe oscuro
+          if (height < 15) return [220, 210, 200, 255];      // beige
+          if (height < 80) return [211, 230, 212, 255];    // amarillento
+          return [220, 231, 231, 255];                       // celeste
         },
         pickable: true
       })
@@ -78,7 +78,7 @@ const App = () => {
     >
      <Map 
       mapboxAccessToken={MAPBOX_TOKEN}
-      mapStyle="mapbox://styles/mapbox/light-v10"
+      mapStyle="mapbox://styles/mapbox/streets-v12"
       reuseMaps
       preserveDrawingBuffer
     />
