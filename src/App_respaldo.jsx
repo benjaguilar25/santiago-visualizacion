@@ -28,7 +28,7 @@ const App = () => {
   useEffect(() => {
     fetch('/export.geojson').then(res => res.json()).then(setBuildings);
     fetch('/movimientos.json').then(res => res.json()).then(setMovements);
-    fetch('/zonas_santiago.geojson')
+    fetch('/zonas_santiago_centroides_ficticios_latlon.geojson')
       .then(res => res.json())
       .then(data => {
         console.log('Zonas cargadas:', data.features.length);
@@ -76,7 +76,7 @@ const App = () => {
     layers.push(
       new HeatmapLayer({
         id: 'heatmap-viajes',
-        data: zonas.features,
+        data: zonas,
         getPosition: d => d.geometry.coordinates,
         getWeight: d => d.properties.viajes || 1,
         radiusPixels: 40,
@@ -97,7 +97,7 @@ const App = () => {
     layers.push(
       new ScatterplotLayer({
         id: 'debug-puntos-zonas',
-        data: zonas.features,
+        data: zonas,
         getPosition: d => d.geometry.coordinates,
         getRadius: 30,
         getFillColor: [255, 0, 0],
