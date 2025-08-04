@@ -7,7 +7,7 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-public/export.geojson
+public/ciudad/export.geojson
 node_modules
 dist
 dist-ssr
